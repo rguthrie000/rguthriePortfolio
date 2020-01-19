@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>rguthrie portfolio</title>
+
+    <!-- clear everything, link to bootstrap cdn, link to local customization css, then link to selected Google fonts -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Rubik+Mono+One|Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--
+        Layout:
+            1. NavBar across full viewport width
+            2. Bootstrap Grid
+                Row 1, 1 column: spacer box (12)
+                Row 2, 3 columns: Name Box (7), Developer Info/Contact Box (3), Developer Photo (2)
+                Row 3, 1 column: Portfolio header (12)
+                Row 4, 3 columns: empty column (3), carousel of portfolio pics (6), empty column(3)
+            3. footer across full viewport
+    -->
+
+    <!-- NavBar; tailored from Bootstrap.com Component -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <a class="navbar-brand" href="#">rguthrie, Web Developer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://damp-taiga-10200.herokuapp.com/">Kitchen Tracker</a>
+                        <a class="dropdown-item" href="https://panamadan.github.io/Project1/">Make Me Laugh! (Group Project)</a>
+                        <a class="dropdown-item" href="https://rguthrie000.github.io/rguthrieWeatherDashboard/">Weather Dashboard</a>
+                        <a class="dropdown-item" href="https://rguthrie000.github.io/rguthrieDayPlanner/">Day Planner</a>
+                        <a class="dropdown-item" href="https://rguthrie000.github.io/GuthrieCodeQuiz/">Coding Quiz</a>
+                        <a class="dropdown-item" href="https://rguthrie000.github.io/GuthriePasswordGenerator/">Password Generator</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 2. Bootstrap Grid -->
+    <div class="container">
+
+        <!-- Row 1 is a spacer -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="spacer"> <style> .spacer {width: 100%; height: 20px;}</style> </div>
+            </div>
+        </div>
+
+        <!-- Row 2, 3 columns: Name Box (7), Developer Info/Contact Box (3), Developer Photo (2) -->
+        <div class="row">
+            <!-- Text Box -->
+            <div class="col-sm-7">
+                <div class="NameBox">
+                    <h1>rguthrie's Developer Page</h1>
+                </div>
+            </div>
+
+            <!-- 2nd column - Info Box with Bootstrap Dropdowns for Contact and About Me functionality -->
+            <div class="col-sm-3">
+                <div class="myTextBox">
+                    <p><b>rguthrie is:</b></p>            
+                    <h5><b>Richard Guthrie rguthrie000@gmail.com</b></h5> 
+                    <br>           
+                    <div class="dropdown">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                                Leave a Note
+                            </button>
+                            <div class="dropdown-menu" class="myDropdown">
+                                <form class="px-4 py-3">
+                                    <div class="form-group">
+                                        <label for="name">Name<br></label>
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email<br></label>
+                                        <input type="email" class="form-control" placeholder="email@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message<br></label>
+                                        <textarea class="BoxOfInput" type="text" name="message"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>    
+                        <div class="btn-group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                            Bio
+                        </button>
+                            <div class="dropdown-menu p-4 text-muted" style="min-width: 300px;">
+                                <p>
+                                    Hi, I'm Richard Guthrie, Web Developer.  I bring a rich history of successful work in Full Stack 
+                                    development efforts from small to large. Check out my portfolio!  My experience as an 
+                                    Engineering Leader and Systems Engineer on product development efforts allows me to satisfy 
+                                    customers with innovative, clear, and concise solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Last item on this row is the Photo -->
+            <div class="col-sm-2">    
+                <img src="./assets/images/20191118 Guthrie.jpg" class="sizedImg" alt="rguthrie_img">
+            </div>
+        </div>
+
+        <!-- Row 3, 1 column: Portfolio header (12) -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="WhiteTitle">
+                    <h3>Check out my Portfolio!</h3>
+                </div>    
+            </div>
+        </div>
+
+        <!-- Row 4, 3 columns: empty column (3), carousel of portfolio pics (6), empty column(3) -->
+        <div class="row">
+
+            <!-- Empty column, width is 1/4 of this row's width -->
+            <div class="col-sm-3">
+            </div>
+
+            <!-- Middle half of this row holds a bootstrap.com Carousel Component, with tailored labels -->
+            <div class="col-sm-6">
+                <div class="bd-example">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#Kitchen Tracker"                data-slide-to="0" class="active"></li>
+                            <li data-target="#Make Me Laugh! (Group Project)" data-slide-to="1"></li>
+                            <li data-target="#Weather Dashboard"              data-slide-to="2"></li>
+                            <li data-target="#Day Planner"                    data-slide-to="3"></li>
+                            <li data-target="#Coding Quiz"                    data-slide-to="4"></li>
+                            <li data-target="#Password Generator"             data-slide-to="5"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="https://damp-taiga-10200.herokuapp.com/">
+                                    <img src="./assets/images/20200119 Kitchen Tracker.png" class="d-block w-100" 
+                                        alt="failed to load '20200119 Kitchen Tracker.png'">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 class="LabelForCarouselImage">Kitchen Tracker</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="https://panamadan.github.io/Project1/">
+                                    <img src="./assets/images/20191217 MakeMeLaugh!.png" class="d-block w-100" 
+                                        alt="failed to load '20191217 MakeMeLaugh!.png'">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 class="LabelForCarouselImage">Make Me Laugh! (group project)</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="https://rguthrie000.github.io/rguthrieWeatherDashboard/">
+                                    <img src="./assets/images/20191217 WeatherDashboard.png" class="d-block w-100" 
+                                        alt="failed to load '20191217 WeatherDashboard.png'">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 class="LabelForCarouselImage">Weather Dashboard</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="https://rguthrie000.github.io/rguthrieDayPlanner/">
+                                    <img src="./assets/images/20191217 DayPlanner.png" class="d-block w-100" 
+                                        alt="failed to load '20191217 DayPlanner.png'">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 class="LabelForCarouselImage">Day Planner</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="https://rguthrie000.github.io/GuthrieCodeQuiz/">
+                                    <img src="./assets/images/20191217 CodingQuiz.png" class="d-block w-100" 
+                                        alt="failed to load '20191217 CodingQuiz.png'">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 class="LabelForCarouselImage">Coding Quiz</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="https://rguthrie000.github.io/GuthriePasswordGenerator/">
+                                    <img src="./assets/images/20191217 PasswordGenerator.png" class="d-block w-100" 
+                                        alt="failed to load '20191217 PasswordGenerator.png'">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 class="LabelForCarouselImage">Password Generator</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty column, width is 1/4 of this row's width -->
+            <div class="col-sm-3">
+            </div>
+
+        </div>
+    
+    </div>
+
+    <!-- Javascript support; jquery, popper, and bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
