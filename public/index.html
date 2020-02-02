@@ -7,15 +7,9 @@
     
     <title>rguthrie portfolio</title>
 
-    <!-- clear everything, link to bootstrap cdn, link to local customization css, then link to selected Google fonts -->
-    <link rel="stylesheet" href="./assets/css/reset.css">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Rubik+Mono+One|Shrikhand&display=swap" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     <!--
@@ -25,8 +19,8 @@
                 Row 1, 1 column: spacer box (12)
                 Row 2, 3 columns: Name Box (7), Developer Info/Contact Box (3), Developer Photo (2)
                 Row 3, 1 column: Portfolio header (12)
-                Row 4, 3 columns: empty column (3), carousel of portfolio pics (6), empty column(3)
-            3. footer across full viewport
+                Row 4, 3 columns: empty column (2), carousel of portfolio pics (8), empty column(2)
+                Row 5, 2 columns: New fortune cookie button (4), and fortune cookie display (8)
     -->
 
     <!-- NavBar; tailored from Bootstrap.com Component -->
@@ -71,7 +65,7 @@
             <div class="col-sm-7">
                 <div class="NameBox">
                     <h1>rguthrie's Developer Page</h1>
-                    <h6>v4, 20200120</h6>
+                    <h6>v5, 20200202</h6>
                 </div>
             </div>
 
@@ -83,24 +77,24 @@
                     <br>           
                     <div class="dropdown">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                                Leave a Note
+                            <button id="dropdown-submit" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                                Send a Note
                             </button>
                             <div class="dropdown-menu" class="myDropdown">
                                 <form class="px-4 py-3">
                                     <div class="form-group">
                                         <label for="name">Name<br></label>
-                                        <input type="text" class="form-control" placeholder="Name">
+                                        <input id="note-name" type="text" class="form-control" placeholder="Name">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email<br></label>
-                                        <input type="email" class="form-control" placeholder="email@example.com">
+                                        <input id="note-email" type="email" class="form-control" placeholder="email@example.com">
                                     </div>
                                     <div class="form-group">
                                         <label for="message">Message<br></label>
-                                        <textarea class="BoxOfInput" type="text" name="message"></textarea>
+                                        <textarea id="note-message" class="BoxOfInput" type="text" name="message"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button id="note" type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                         </div>    
@@ -109,11 +103,16 @@
                             Bio
                         </button>
                             <div class="dropdown-menu p-4 text-muted" style="min-width: 300px;">
-                                <p>
-                                    Hi, I'm Richard Guthrie, Web Developer. I bring a rich history of successful work in Full Stack 
-                                    development efforts from small to large. Check out my portfolio! My experience as an 
-                                    Engineering Leader and Systems Engineer on product development efforts allows me to satisfy 
-                                    customers with innovative, clear, and concise solutions.
+                                <p id="biotag">
+                                    Hi, I'm Richard Guthrie, Web Developer. 
+                                    I bring a rich history of successful work 
+                                    in Full Stack development efforts from 
+                                    small to large. Check out my portfolio! 
+                                    My experience as an Engineering Leader and 
+                                    Systems Engineer on product development 
+                                    efforts allows me to satisfy customers 
+                                    with innovative, clear, and concise 
+                                    solutions.
                                 </p>
                             </div>
                         </div>
@@ -123,7 +122,7 @@
 
             <!-- Last item on this row is the Photo -->
             <div class="col-sm-2">    
-                <img src="./assets/images/20191118 Guthrie.jpg" class="sizedImg" alt="rguthrie_img">
+                <img src="./images/20191118 Guthrie.jpg" class="sizedImg" alt="rguthrie_img">
             </div>
         </div>
 
@@ -139,12 +138,10 @@
         <!-- Row 4, 3 columns: empty column (3), carousel of portfolio pics (6), empty column(3) -->
         <div class="row">
 
-            <!-- Empty column, width is 1/4 of this row's width -->
-            <div class="col-sm-3">
+            <div class="col-sm-2">
             </div>
-
-            <!-- Middle half of this row holds a bootstrap.com Carousel Component, with tailored labels -->
-            <div class="col-sm-6">
+            <!-- Left half of this row holds a bootstrap.com Carousel Component, with tailored labels -->
+            <div class="col-sm-8 mx-auto">
                 <div class="bd-example">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -159,7 +156,7 @@
                             <div class="carousel-item active">
                                 <a href="https://damp-taiga-10200.herokuapp.com/">
                                     <!-- GitHub has an issue serving this image. But .gif works! -->
-                                    <img src="./assets/images/20200120 Kitchen Tracker.gif" class="d-block w-100" 
+                                    <img src="./images/20200120 Kitchen Tracker.gif" class="d-block w-100" 
                                         alt="failed to load '20200120 Kitchen Tracker.gif'">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="LabelForCarouselImage">Kitchen Tracker</h5>
@@ -168,7 +165,7 @@
                             </div>
                             <div class="carousel-item">
                                 <a href="https://panamadan.github.io/Project1/">
-                                    <img src="./assets/images/20191217 MakeMeLaugh!.png" class="d-block w-100" 
+                                    <img src="./images/20191217 MakeMeLaugh!.png" class="d-block w-100" 
                                         alt="failed to load '20191217 MakeMeLaugh!.png'">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="LabelForCarouselImage">Make Me Laugh! (group project)</h5>
@@ -179,7 +176,7 @@
                                 <a href="https://rguthrie000.github.io/rguthrieWeatherDashboard/">
                                     <!-- GitHub has an issue serving this image. But .gif works! -->
                                     <!-- Since other .png files are displayed, there may be a size limit. -->
-                                    <img src="./assets/images/20191217 WeatherDashboard.gif" class="d-block w-100" 
+                                    <img src="./images/20191217 WeatherDashboard.gif" class="d-block w-100" 
                                         alt="failed to load '20191217 WeatherDashboard.gif'">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="LabelForCarouselImage">Weather Dashboard</h5>
@@ -188,7 +185,7 @@
                             </div>
                             <div class="carousel-item">
                                 <a href="https://rguthrie000.github.io/rguthrieDayPlanner/">
-                                    <img src="./assets/images/20191217 DayPlanner.png" class="d-block w-100" 
+                                    <img src="./images/20191217 DayPlanner.png" class="d-block w-100" 
                                         alt="failed to load '20191217 DayPlanner.png'">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="LabelForCarouselImage">Day Planner</h5>
@@ -197,7 +194,7 @@
                             </div>
                             <div class="carousel-item">
                                 <a href="https://rguthrie000.github.io/GuthrieCodeQuiz/">
-                                    <img src="./assets/images/20191217 CodingQuiz.png" class="d-block w-100" 
+                                    <img src="./images/20191217 CodingQuiz.png" class="d-block w-100" 
                                         alt="failed to load '20191217 CodingQuiz.png'">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="LabelForCarouselImage">Coding Quiz</h5>
@@ -206,7 +203,7 @@
                             </div>
                             <div class="carousel-item">
                                 <a href="https://rguthrie000.github.io/GuthriePasswordGenerator/">
-                                    <img src="./assets/images/20191217 PasswordGenerator.png" class="d-block w-100" 
+                                    <img src="./images/20191217 PasswordGenerator.png" class="d-block w-100" 
                                         alt="failed to load '20191217 PasswordGenerator.png'">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="LabelForCarouselImage">Password Generator</h5>
@@ -225,19 +222,27 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Empty column, width is 1/4 of this row's width -->
-            <div class="col-sm-3">
-            </div>
-
         </div>
-    
+
+        <!-- Row 5, 2 columns: New fortune cookie button (4), and fortune cookie display (8) -->
+        <div class="row">
+            <!-- Empty column, width is 1/4 of this row's width -->
+            <div class="col-sm-4">
+                <button id="new-cookie"><i class="fas fa-cookie fa-2x fa-spin"></i><span id="cookie-label">  Have another cookie!</span></button>
+            </div>
+            <div class="col-sm-8">
+                <pre>
+                    <p id="cookieTag"></p>
+                </pre>
+            </div>
+        </div>
     </div>
 
-    <!-- Javascript support; jquery, popper, and bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg="nest"></script>
+    <script type="text/javascript" src="./js/portfolio.js"></script>
 
 </body>
 </html>
