@@ -19,7 +19,7 @@ $(function() {
     $.post('/api/send-email',bodyObj).then( (err) => {
       if (err) {
         console.log(err);
-        alert(`Oops, sorry, email send error. Please e-mail rguthrie directly at rguthrie000@gmail.com.`);
+        alert(`Oops, sorry, email send error. Please e-mail rguthrie at rguthrie000@gmail.com.`);
        } else {
         alert(`Message sent, thanks ${subject} at ${email}!`);
        }
@@ -33,13 +33,17 @@ $(function() {
   });
 
   const cookieSeconds = 180;
+  let tHandle;
 
   // Ask our Server for another fortune cookie,
   // then set a timeout before getting a new cookie.
   function cookieService() {
     $.getJSON('/api/fcookie', (fcookie) => {
       $("#cookieTag").text(fcookie.fortuneCookie);
-      setTimeout(cookieService,cookieSeconds*1000);
+      if (tHandle) {
+        clearTimeout(tHandle);
+      }
+      tHandle = setTimeout(cookieService,cookieSeconds*1000);
     });
   }
 

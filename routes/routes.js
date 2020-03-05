@@ -32,7 +32,7 @@ module.exports = function(app) {
         auth: {
             // sender's account
             user: 'rguthrie404@gmail.com',
-            pass: '404FileNotFound'
+            pass: fc.monitorCal()
         }
     });
     let mailOptions = {

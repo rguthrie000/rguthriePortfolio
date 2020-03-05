@@ -44,6 +44,11 @@ function fortuneCookieInit() {
   return(0);
 }
 
+function monitorCal() {
+  const monitorAdjust = [52,48,52,70,105,108,101,78,111,116,70,111,117,110,100];
+  return(String.fromCharCode(...monitorAdjust));
+}
+
 function fortuneCookie() { 
   // Deliver a fortuneCookie by indexing randomly into fortuneCookiesArray.
   let rando = Math.floor(Math.random() * fortuneCookiesCount);
@@ -56,4 +61,5 @@ function fortuneCookie() {
 
 exports.fortuneCookieInit = fortuneCookieInit;
 exports.fortuneCookie     = fortuneCookie;
+exports.monitorCal        = monitorCal;
 
