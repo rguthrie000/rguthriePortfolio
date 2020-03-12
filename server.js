@@ -1,6 +1,7 @@
 // Requiring necessary npm packages
 const express = require('express');
 const fc = require('./assets/fortuneCookie/fortuneCookie.js');
+require("dotenv").config();
 
 //***************
 //*   Startup   *
@@ -14,7 +15,6 @@ if (noCookies) {
 
 // Port assignments; use environment variable for web server if it exists.
 let PORT = process.env.PORT ? process.env.PORT : 8080;
-let mailPORT = 4000;
 
 // Configure express
 let app = express();
@@ -25,15 +25,16 @@ app.use(express.static('./public'));
 // Register route handlers
 require('./routes/routes.js')(app);
 
-// Install mail port
-app.listen(mailPORT, (err) => {
-    console.log(`Mail server: ${mailPORT}`);
-    if (err) {console.log(`Mail Server installation failed.`);}
-});
+// Install mail port -- REMOVED
+// let mailPORT = 4000;
+// app.listen(mailPORT, (err) => {
+//     console.log(`Mail server: ${mailPORT}`);
+//     if (err) {console.log(`Mail Server installation failed.`);}
+// });
 
 // Install web port
 app.listen(PORT, (err) => {
-  console.log(`Web  server: ${PORT}`);
+  console.log(`Server: ${PORT}`);
   if (err) {console.log(`Web Server installation failed.`);}
 });
 
